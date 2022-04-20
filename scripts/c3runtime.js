@@ -6974,16 +6974,27 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.System.Acts.SetVar,
 		C3.Plugins.VKBridge.Exps.ClientPlatform,
-		C3.Plugins.Arr.Acts.SetX,
+		C3.Plugins.VKBridge.Exps.UserID,
 		C3.Plugins.Eponesh_GameScore.Acts.PlayerLoad,
+		C3.Plugins.VKBridge.Acts.Authorization,
+		C3.Plugins.Arr.Acts.SetX,
+		C3.Plugins.System.Acts.SetGroupActive,
+		C3.Plugins.AJAX.Acts.Post,
 		C3.Plugins.VKBridge.Cnds.AppGetClientSuccess,
 		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.System.Cnds.EveryTick,
 		C3.Plugins.Arr.Exps.At,
+		C3.Plugins.Touch.Cnds.OnTapGesture,
+		C3.Plugins.Arr.Exps.AsJSON,
+		C3.Plugins.System.Cnds.IsGroupActive,
+		C3.Plugins.AJAX.Cnds.OnComplete,
+		C3.Plugins.Arr.Acts.JSONLoad,
+		C3.Plugins.System.Exps.tokenat,
+		C3.Plugins.AJAX.Exps.LastData,
+		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.System.Cnds.Every,
 		C3.Plugins.Touch.Cnds.OnTouchObject,
 		C3.Plugins.Sprite.Acts.SetSize,
-		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.Audio.Acts.Play,
 		C3.Plugins.Arr.Cnds.CompareX,
 		C3.Plugins.System.Cnds.TriggerOnce,
@@ -7005,14 +7016,9 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Acts.SetOpacity,
 		C3.Plugins.VKBridge.Cnds.ShowAdsSuccess,
 		C3.Plugins.VKBridge.Acts.AppGetClient,
-		C3.Plugins.VKBridge.Acts.Authorization,
 		C3.Plugins.Touch.Cnds.OnDoubleTapGesture,
 		C3.Plugins.VKBridge.Cnds.AuthorizationSuccess,
-		C3.Plugins.VKBridge.Exps.UserID,
-		C3.Plugins.AJAX.Acts.Post,
 		C3.Plugins.Text.Exps.Text,
-		C3.Plugins.AJAX.Cnds.OnComplete,
-		C3.Plugins.AJAX.Exps.LastData,
 		C3.Plugins.Text.Cnds.CompareText,
 		C3.Plugins.System.Acts.GoToLayout
 	];
@@ -7187,6 +7193,14 @@ self.C3_ExpressionFuncs = [
 		() => 9,
 		() => 10,
 		() => 11,
+		() => "loadgame",
+		() => "Load",
+		() => "https://dca149.ru/loadk.php",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => and("username=", v0.GetValue());
+		},
+		() => "POST",
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject(1);
@@ -7216,6 +7230,19 @@ self.C3_ExpressionFuncs = [
 			const n1 = p._GetNode(1);
 			return () => and(and(n0.ExpObject(8), " / "), n1.ExpObject(9));
 		},
+		() => "Saves",
+		() => "https://dca149.ru/savek.php",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			const n1 = p._GetNode(1);
+			return () => ((and("username=", v0.GetValue()) + "&data=") + n1.ExpObject());
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const f1 = p._GetNode(1).GetBoundMethod();
+			return () => f0(f1(), 0, ";");
+		},
+		() => 0.3,
 		p => {
 			const n0 = p._GetNode(0);
 			const n1 = p._GetNode(1);
@@ -7238,7 +7265,6 @@ self.C3_ExpressionFuncs = [
 		},
 		() => 290,
 		() => 279,
-		() => 0.3,
 		() => 295,
 		() => 284,
 		() => 100,
@@ -7333,10 +7359,6 @@ self.C3_ExpressionFuncs = [
 		() => "score",
 		() => 30,
 		() => "",
-		p => {
-			const n0 = p._GetNode(0);
-			return () => n0.ExpObject(2);
-		},
 		() => -10000,
 		p => {
 			const n0 = p._GetNode(0);
@@ -7357,15 +7379,14 @@ self.C3_ExpressionFuncs = [
 		() => 40,
 		() => 1.5,
 		() => "post",
-		() => "https://dca149.ru/registration.php",
+		() => "https://dca149.ru/registrationk.php",
 		p => {
 			const n0 = p._GetNode(0);
 			const n1 = p._GetNode(1);
 			return () => ((("username=" + n0.ExpObject()) + "&password=") + n1.ExpObject());
 		},
-		() => "POST",
 		() => "Спасибо за регистрацию",
-		() => "https://dca149.ru/login.php",
+		() => "https://dca149.ru/logink.php",
 		() => "К сожалению, такое имя пользователя уже занято",
 		() => "Всё верно!",
 		p => {
