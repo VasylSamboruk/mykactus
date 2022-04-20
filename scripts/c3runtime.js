@@ -6978,6 +6978,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.VKBridge.Acts.Authorization,
 		C3.Plugins.Arr.Acts.SetX,
 		C3.Plugins.System.Acts.SetGroupActive,
+		C3.Plugins.Sprite.Acts.SetOpacity,
 		C3.Plugins.AJAX.Acts.Post,
 		C3.Plugins.VKBridge.Cnds.AppGetClientSuccess,
 		C3.Plugins.Text.Acts.SetText,
@@ -7012,7 +7013,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.VKBridge.Acts.ShowAds,
 		C3.Plugins.VKBridge.Acts.AdsMobile,
 		C3.Plugins.VKBridge.Cnds.AdsMobileSuccess,
-		C3.Plugins.Sprite.Acts.SetOpacity,
 		C3.Plugins.VKBridge.Cnds.ShowAdsSuccess,
 		C3.Plugins.Eponesh_GameScore.Acts.PlayerLoad,
 		C3.Plugins.VKBridge.Acts.AppGetClient,
@@ -7062,6 +7062,7 @@ self.C3_JsPropNameTable = [
 	{AJAX: 0},
 	{GameScore: 0},
 	{logo: 0},
+	{notMoney: 0},
 	{rubin: 0},
 	{Speedavtomaining: 0},
 	{avtomainingCost1: 0},
@@ -7270,6 +7271,10 @@ self.C3_ExpressionFuncs = [
 		() => 284,
 		() => 100,
 		() => "volume",
+		() => 205,
+		() => 72,
+		() => 210,
+		() => 77,
 		p => {
 			const n0 = p._GetNode(0);
 			const n1 = p._GetNode(1);
@@ -7283,10 +7288,10 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => add(n0.ExpObject(4), 750);
 		},
-		() => 205,
-		() => 72,
-		() => 210,
-		() => 77,
+		() => 250,
+		() => 92,
+		() => 258,
+		() => 97,
 		p => {
 			const n0 = p._GetNode(0);
 			const n1 = p._GetNode(1);
@@ -7300,10 +7305,10 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => add(n0.ExpObject(5), 450);
 		},
-		() => 250,
-		() => 92,
-		() => 258,
-		() => 97,
+		() => 257,
+		() => 78,
+		() => 261,
+		() => 83,
 		p => {
 			const n0 = p._GetNode(0);
 			const n1 = p._GetNode(1);
@@ -7317,10 +7322,9 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => add(n0.ExpObject(6), 1250);
 		},
-		() => 257,
-		() => 78,
-		() => 261,
-		() => 83,
+		() => 243,
+		() => 95,
+		() => 248,
 		p => {
 			const n0 = p._GetNode(0);
 			const n1 = p._GetNode(1);
@@ -7334,9 +7338,6 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => add(n0.ExpObject(7), 5250);
 		},
-		() => 243,
-		() => 95,
-		() => 248,
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject(9);
