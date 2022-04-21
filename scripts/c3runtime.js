@@ -7009,9 +7009,9 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Audio.Acts.SetVolume,
 		C3.Plugins.VKBridge.Acts.ShowInvite,
 		C3.Plugins.VKBridge.Acts.ShowWall,
-		C3.Plugins.VKBridge.Acts.AdsMobile,
-		C3.Plugins.VKBridge.Cnds.AdsMobileSuccess,
-		C3.Plugins.Sprite.Cnds.CompareOpacity,
+		C3.Plugins.Eponesh_GameScore.Acts.AdsShowRewarded,
+		C3.Plugins.Eponesh_GameScore.Cnds.OnAdsRewardedClose,
+		C3.Plugins.Eponesh_GameScore.Acts.AdsShowPreloader,
 		C3.Plugins.Eponesh_GameScore.Acts.PlayerLoad,
 		C3.Plugins.VKBridge.Acts.AppGetClient,
 		C3.Plugins.Touch.Cnds.OnDoubleTapGesture,
@@ -7374,14 +7374,13 @@ self.C3_ExpressionFuncs = [
 			const n0 = p._GetNode(0);
 			return () => ((n0.ExpObject(11)) === (0) ? 1 : 0);
 		},
-		() => "Мой кактус - кликер!",
-		() => "Заходи в игру, заработывай рубинчики кликами, вырасти крутого кактуса!",
+		() => "Мой кактус - кликер!\nЗаходи в игру, заработывай рубинчики кликами, вырасти крутого кактуса!",
+		() => "https://vk.com/app8143821",
 		p => {
 			const n0 = p._GetNode(0);
 			return () => add(n0.ExpObject(1), 5000);
 		},
-		() => 90,
-		() => 40,
+		() => 50,
 		() => 350,
 		() => 1.5,
 		() => "post",
