@@ -7293,7 +7293,7 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => multiply(n0.ExpObject(4), 3);
+			return () => multiply(n0.ExpObject(4), 2);
 		},
 		p => {
 			const n0 = p._GetNode(0);
@@ -7351,7 +7351,7 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => multiply(n0.ExpObject(9), 7);
+			return () => multiply(n0.ExpObject(9), 5);
 		},
 		p => {
 			const n0 = p._GetNode(0);
