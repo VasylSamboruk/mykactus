@@ -6999,6 +6999,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Arr.Cnds.CompareX,
 		C3.Plugins.System.Cnds.TriggerOnce,
 		C3.Plugins.Sprite.Acts.SetAnimFrame,
+		C3.Plugins.Text.Acts.SetOpacity,
 		C3.Plugins.Eponesh_GameScore.Acts.LeaderboardOpen,
 		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.Eponesh_GameScore.Exps.PlayerScore,
@@ -7063,6 +7064,8 @@ self.C3_JsPropNameTable = [
 	{GameScore: 0},
 	{logo: 0},
 	{notMoney: 0},
+	{timeBl: 0},
+	{txtSpeed: 0},
 	{rubin: 0},
 	{Speedavtomaining: 0},
 	{avtomainingCost1: 0},
@@ -7232,6 +7235,10 @@ self.C3_ExpressionFuncs = [
 			const n1 = p._GetNode(1);
 			return () => and(and(n0.ExpObject(8), " / "), n1.ExpObject(9));
 		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (and(" + ", n0.ExpObject(2)) + "  в сек");
+		},
 		() => "Saves",
 		() => "https://dca149.ru/savek.php",
 		p => {
@@ -7286,7 +7293,7 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => add(n0.ExpObject(4), 750);
+			return () => multiply(n0.ExpObject(4), 3);
 		},
 		p => {
 			const n0 = p._GetNode(0);
@@ -7303,7 +7310,7 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => add(n0.ExpObject(5), 450);
+			return () => multiply(n0.ExpObject(5), 3);
 		},
 		p => {
 			const n0 = p._GetNode(0);
@@ -7320,7 +7327,7 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => add(n0.ExpObject(6), 1250);
+			return () => multiply(n0.ExpObject(6), 3);
 		},
 		p => {
 			const n0 = p._GetNode(0);
@@ -7336,7 +7343,7 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => add(n0.ExpObject(7), 5250);
+			return () => multiply(n0.ExpObject(7), 3);
 		},
 		p => {
 			const n0 = p._GetNode(0);
@@ -7344,7 +7351,7 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => multiply(n0.ExpObject(9), 5);
+			return () => multiply(n0.ExpObject(9), 7);
 		},
 		p => {
 			const n0 = p._GetNode(0);
@@ -7379,6 +7386,7 @@ self.C3_ExpressionFuncs = [
 			return () => add(n0.ExpObject(1), 5000);
 		},
 		() => 40,
+		() => 350,
 		() => 1.5,
 		() => "post",
 		() => "https://dca149.ru/registrationk.php",
